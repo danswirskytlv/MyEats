@@ -1,0 +1,23 @@
+rules_version = '2';
+
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /recipe_images/{imageId} {
+      // Any signed-in user can view photos; only signed-in users can upload,
+      // capped at 5 MB and images only.
+      allow read: if request.auth != null;
+      allow write: if request.auth != null
+                   && request.resource.size < 5 * 1024 * 1024
+                   && request.resource.contentType.matches('image/.*');
+    }
+
+    match /profile_images/{imageId} {
+      // Each user can upload only their own avatar
+      allow read: if request.auth != null;
+      allow write: if request.auth != null
+                   && imageId == request.auth.uid + '.jpg'
+                   && request.resource.size < 5 * 1024 * 1024
+                   && request.resource.contentType.matches('image/.*');
+    }
+  }
+}

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/feedFragment">
+
+    <fragment
+        android:id="@+id/feedFragment"
+        android:name="com.danswirsky.myeats.ui.feed.FeedFragment"
+        android:label="@string/feed_title">
+        <action
+            android:id="@+id/action_feed_to_details"
+            app:destination="@id/recipeDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/recipeDetailsFragment"
+        android:name="com.danswirsky.myeats.ui.details.RecipeDetailsFragment"
+        android:label="Recipe">
+        <argument
+            android:name="recipeId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_details_to_edit"
+            app:destination="@id/addRecipeFragment" />
+        <action
+            android:id="@+id/action_details_to_user"
+            app:destination="@id/userRecipesFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/userRecipesFragment"
+        android:name="com.danswirsky.myeats.ui.user.UserRecipesFragment"
+        android:label="Cook">
+        <argument
+            android:name="ownerUid"
+            app:argType="string" />
+        <argument
+            android:name="ownerName"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_user_to_details"
+            app:destination="@id/recipeDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addRecipeFragment"
+        android:name="com.danswirsky.myeats.ui.add.AddRecipeFragment"
+        android:label="@string/add_title">
+        <argument
+            android:name="recipeId"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/cooksFragment"
+        android:name="com.danswirsky.myeats.ui.cooks.CooksFragment"
+        android:label="@string/cooks_title">
+        <action
+            android:id="@+id/action_cooks_to_user"
+            app:destination="@id/userRecipesFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/favoritesFragment"
+        android:name="com.danswirsky.myeats.ui.favorites.FavoritesFragment"
+        android:label="@string/favorites_title">
+        <action
+            android:id="@+id/action_favorites_to_details"
+            app:destination="@id/recipeDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.danswirsky.myeats.ui.profile.ProfileFragment"
+        android:label="@string/profile_title">
+        <action
+            android:id="@+id/action_profile_to_details"
+            app:destination="@id/recipeDetailsFragment" />
+        <action
+            android:id="@+id/action_profile_to_edit_profile"
+            app:destination="@id/editProfileFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.danswirsky.myeats.ui.profile.EditProfileFragment"
+        android:label="@string/edit_profile_title" />
+</navigation>

@@ -1,0 +1,14 @@
+*.iml
+.gradle/
+local.properties
+.idea/
+.DS_Store
+build/
+captures/
+.externalNativeBuild/
+.cxx/
+app/google-services.json
+
+# Demo credentials + local design sources — not for the public repo
+firebase/seed_users_credentials.txt
+design_assets/

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- MyEats redesign palette: warm cream background, deep green primary,
+         amber for ratings, brick red for destructive actions -->
+    <color name="primary_green">#22684E</color>
+    <color name="amber">#C07C1C</color>
+    <color name="brick">#B3402E</color>
+
+    <color name="cream_bg">#FAF9F6</color>
+    <color name="chip_bg">#F1EDE6</color>
+    <color name="surface_border">#E7E2DA</color>
+
+    <color name="text_primary">#1C1A17</color>
+    <color name="text_secondary">#6E675D</color>
+
+    <color name="white">#FFFFFF</color>
+
+    <color name="ic_launcher_background">#22684E</color>
+</resources>

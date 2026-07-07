@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MyEats</string>
+    <string name="tagline">Cook it. Share it. Rate it.</string>
+
+    <!-- Auth -->
+    <string name="login_title">Welcome back</string>
+    <string name="register_title">Create account</string>
+    <string name="hint_name">Full name</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_confirm_password">Confirm password</string>
+    <string name="action_login">Log in</string>
+    <string name="action_register">Sign up</string>
+    <string name="go_to_register">No account yet? Sign up</string>
+    <string name="action_forgot_password">Forgot password?</string>
+    <string name="reset_email_sent">If this email is registered, a reset link was sent — check your inbox</string>
+    <string name="error_reset_needs_email">Enter your email address above first</string>
+    <string name="go_to_login">Already have an account? Log in</string>
+
+    <!-- Email verification -->
+    <string name="verify_title">Verify your email</string>
+    <string name="verify_message_format">We sent a verification link to\n%1$s\n\nOpen the email, tap the link, and come back here.</string>
+    <string name="action_i_verified">I verified — continue</string>
+    <string name="action_resend_email">Resend email</string>
+    <string name="action_back_to_login">Back to login</string>
+    <string name="verification_sent">Verification email sent</string>
+    <string name="error_still_not_verified">Email not verified yet — check your inbox</string>
+    <string name="error_send_verification">Could not send the email, try again shortly</string>
+
+    <!-- Validation errors -->
+    <string name="error_invalid_credentials">Incorrect email or password</string>
+    <string name="error_registration_failed">Registration failed — please check your details</string>
+    <string name="error_invalid_email">Enter a valid email address</string>
+    <string name="error_short_password">Password must be at least 6 characters</string>
+    <string name="error_password_mismatch">Passwords do not match</string>
+    <string name="error_empty_name">Enter your name</string>
+    <string name="error_required">Required</string>
+
+    <!-- Feed -->
+    <string name="feed_title">Recipe Feed</string>
+    <string name="greeting_morning">Good morning</string>
+    <string name="greeting_afternoon">Good afternoon</string>
+    <string name="greeting_evening">Good evening</string>
+    <string name="whats_cooking">What\'s cooking?</string>
+    <string name="feed_empty">No recipes yet — be the first to upload one!</string>
+    <string name="recipe_subtitle_format">★ %1$s · %2$s</string>
+    <string name="recipe_image_desc">Recipe photo</string>
+
+    <!-- Search -->
+    <string name="search_hint">Search by name or ingredient</string>
+
+    <!-- Cooks tab -->
+    <string name="cooks_title">Cooks</string>
+    <string name="nav_cooks">Cooks</string>
+    <string name="search_cooks_hint">Search cooks by name</string>
+    <string name="cooks_empty">No cooks found</string>
+    <string name="cook_recipe_count_format">%1$d recipes</string>
+
+    <!-- Cook page -->
+    <string name="recipes_section">Recipes</string>
+    <string name="user_recipes_empty">This cook has no recipes yet</string>
+
+    <!-- Sorting -->
+    <string name="sort_newest">Newest</string>
+    <string name="sort_top_rated">Top rated</string>
+
+    <!-- Details -->
+    <string name="share_desc">Share recipe</string>
+    <string name="share_chooser_title">Share recipe via</string>
+    <string name="action_edit">Edit</string>
+    <string name="action_delete">Delete</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="delete_confirm_title">Delete recipe?</string>
+    <string name="delete_confirm_message">This will remove the recipe and its photo for everyone. This cannot be undone.</string>
+    <string name="recipe_deleted">Recipe deleted</string>
+    <string name="your_rating">Your rating</string>
+    <string name="comments_title">Comments</string>
+    <string name="comments_title_format">Comments (%1$d)</string>
+    <string name="comments_empty">No comments yet — ask the chef anything!</string>
+    <string name="hint_comment">Add a comment…</string>
+    <string name="send_comment_desc">Send comment</string>
+    <string name="comment_owner_badge">Chef</string>
+    <string name="comment_time_edited_format">%1$s · edited</string>
+    <string name="like_comment_desc">Like comment</string>
+    <string name="edit_comment_title">Edit comment</string>
+    <string name="delete_comment_title">Delete comment?</string>
+    <string name="delete_comment_message">This will remove your comment for everyone.</string>
+    <string name="favorite_desc">Add to favorites</string>
+    <string name="details_by_format">by %1$s</string>
+    <string name="details_rating_format">★ %1$s (%2$d ratings)</string>
+    <string name="details_no_ratings">No ratings yet</string>
+    <string name="details_ingredients">Ingredients</string>
+    <string name="details_steps">Steps</string>
+
+    <!-- Add / edit recipe -->
+    <string name="add_title">Add Recipe</string>
+    <string name="edit_title">Edit Recipe</string>
+    <string name="action_save_changes">Save changes</string>
+    <string name="recipe_updated">Recipe updated!</string>
+    <string name="label_categories">Categories (choose one or more)</string>
+    <string name="error_select_category">Select at least one category</string>
+    <string name="hint_recipe_title">Recipe name</string>
+    <string name="hint_ingredients">Ingredients (one per line)</string>
+    <string name="hint_steps">Preparation steps</string>
+    <string name="action_pick_image">Add photo</string>
+    <string name="action_upload">Upload recipe</string>
+    <string name="recipe_uploaded">Recipe uploaded!</string>
+    <string name="error_image_load">Could not load the image, try another one</string>
+    <string name="image_preview_desc">Picked photo preview</string>
+
+    <!-- Profile -->
+    <string name="profile_title">My Page</string>
+    <string name="action_logout">Log out</string>
+    <string name="action_edit_profile">Edit profile</string>
+    <string name="edit_profile_title">Edit Profile</string>
+    <string name="action_change_photo">Change photo</string>
+    <string name="hint_bio">Bio — a bit about you as a cook</string>
+    <string name="profile_updated">Profile updated!</string>
+    <string name="avatar_desc">Profile photo</string>
+    <string name="stat_recipes_label">recipes</string>
+    <string name="stat_rating_label">avg rating</string>
+    <string name="stat_no_rating">—</string>
+    <string name="toggle_my_recipes">My recipes</string>
+    <string name="profile_empty_my">You haven\'t uploaded any recipes yet</string>
+    <string name="profile_empty_favorites">No favorites yet — tap the heart on a recipe</string>
+
+    <!-- Favorites -->
+    <string name="favorites_title">Favorites</string>
+    <string name="remove_selected_format">Remove (%1$d)</string>
+    <string name="favorites_removed_format">%1$d removed from favorites</string>
+
+    <!-- Misc -->
+    <string name="back_desc">Back</string>
+
+    <!-- Bottom navigation -->
+    <string name="nav_feed">Feed</string>
+    <string name="nav_add">Add</string>
+    <string name="nav_favorites">Favorites</string>
+    <string name="nav_profile">Profile</string>
+
+    <string-array name="recipe_categories">
+        <item>Breakfast</item>
+        <item>Lunch</item>
+        <item>Dinner</item>
+        <item>Dessert</item>
+        <item>Salad</item>
+        <item>Soup</item>
+        <item>Snack</item>
+        <item>Drink</item>
+    </string-array>
+</resources>

@@ -1,0 +1,39 @@
+{
+  "rules": {
+    ".read": false,
+    ".write": false,
+
+    "recipes": {
+      ".read": "auth != null",
+      ".indexOn": ["createdAt", "ratingAvg", "titleLower", "ownerUid"],
+      "$recipeId": {
+        ".write": "auth != null"
+      }
+    },
+
+    "comments": {
+      "$recipeId": {
+        ".read": "auth != null",
+        "$commentId": {
+          ".write": "auth != null && (!data.exists() ? newData.child('authorUid').val() === auth.uid : data.child('authorUid').val() === auth.uid)",
+          "likes": {
+            "$uid": {
+              ".write": "auth != null && auth.uid === $uid"
+            }
+          }
+        }
+      }
+    },
+
+    "users": {
+      ".read": "auth != null",
+      ".indexOn": ["nameLower"],
+      "$uid": {
+        ".write": "auth != null && auth.uid === $uid",
+        "recipeCount": {
+          ".write": "auth != null"
+        }
+      }
+    }
+  }
+}
