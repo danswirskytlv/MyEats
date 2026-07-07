@@ -12,9 +12,13 @@ A community cookbook app for Android: upload recipes with photos, browse everyon
 
 ## 📱 Screenshots
 
-| Feed | Recipe | Cook profile | Add recipe |
-|---|---|---|---|
-| ![Feed](screenshots/feed.png) | ![Recipe](screenshots/recipe.png) | ![Cook](screenshots/cook.png) | ![Add](screenshots/add.png) |
+| Feed | Recipe | Comments |
+|---|---|---|
+| ![Feed](screenshots/feed.png) | ![Recipe](screenshots/recipe.png) | ![Comments](screenshots/comments.png) |
+
+| Cook profile | Add recipe |
+|---|---|
+| ![Cook](screenshots/cook.png) | ![Add](screenshots/add.png) |
 
 ## Tech
 
