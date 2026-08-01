@@ -8,7 +8,7 @@ A community cookbook app for Android: upload recipes with photos, browse everyon
 
 ## 🎥 Demo video
 
-> **[Watch the demo video](ADD_VIDEO_LINK_HERE)** — walkthrough of every screen and feature.
+> **[Watch the demo video](https://youtu.be/r8jyVqAz4jk)** — walkthrough of every screen and feature.
 
 ## 📱 Screenshots
 
