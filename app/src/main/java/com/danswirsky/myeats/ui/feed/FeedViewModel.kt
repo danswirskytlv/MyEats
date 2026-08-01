@@ -118,7 +118,7 @@ class FeedViewModel : ViewModel() {
         }
 
         repository.searchByTitle(q, PAGE_SIZE) { deliver(it) }
-        repository.searchByIngredient(q, PAGE_SIZE) { deliver(it) }
+        repository.searchByKeyword(q, PAGE_SIZE) { deliver(it) }
     }
 
     fun setQuery(text: String) {

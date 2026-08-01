@@ -12,3 +12,7 @@ app/google-services.json
 # Demo credentials + local design sources — not for the public repo
 firebase/seed_users_credentials.txt
 design_assets/
+
+# Python cache
+__pycache__/
+*.pyc

@@ -39,13 +39,14 @@ class RecipeRepository {
         )
 
         /**
-         * Extracts searchable ingredient words ("2 tbsp brown sugar" ->
+         * Extracts searchable words from the title and ingredients
+         * ("Classic Shakshuka" + "2 tbsp brown sugar" -> classic, shakshuka,
          * brown, sugar). Stored as a map so the server can answer
-         * "which recipes contain sugar?" without scanning text.
+         * "which recipes match this word?" without scanning text.
          */
-        fun extractIngredientKeywords(ingredients: String): Map<String, Boolean> =
+        fun extractSearchKeywords(title: String, ingredients: String): Map<String, Boolean> =
             Regex("[a-z]+")
-                .findAll(ingredients.lowercase())
+                .findAll("$title $ingredients".lowercase())
                 .map { it.value }
                 .filter { it.length >= 3 && it !in STOP_WORDS }
                 .associateWith { true }
@@ -128,14 +129,14 @@ class RecipeRepository {
             .addOnFailureListener { onResult(null) }
     }
 
-    /** Server-side ingredient search: recipes whose keyword map contains [word]. */
-    fun searchByIngredient(word: String, limit: Int, onResult: (List<Recipe>?) -> Unit) {
-        val key = word.trim().lowercase().replace(Regex("[^a-z]"), "")
-        if (key.length < 3) {
+    /** Server-side word search: recipes whose keyword map contains [word]. */
+    fun searchByKeyword(word: String, limit: Int, onResult: (List<Recipe>?) -> Unit) {
+        val key = word.trim().lowercase().split(Regex("[^a-z]+")).firstOrNull { it.length >= 3 } ?: ""
+        if (key.isEmpty()) {
             onResult(emptyList())
             return
         }
-        recipesRef.orderByChild("ingredientKeywords/$key").equalTo(true)
+        recipesRef.orderByChild("searchKeywords/$key").equalTo(true)
             .limitToFirst(limit)
             .get()
             .addOnSuccessListener { snapshot ->
@@ -272,7 +273,7 @@ class RecipeRepository {
         recipe.id = id
         recipe.createdAt = System.currentTimeMillis()
         recipe.titleLower = recipe.title.lowercase()
-        recipe.ingredientKeywords = extractIngredientKeywords(recipe.ingredients)
+        recipe.searchKeywords = extractSearchKeywords(recipe.title, recipe.ingredients)
 
         val save: () -> Unit = {
             saveRecipe(recipe) { error ->
@@ -307,7 +308,7 @@ class RecipeRepository {
      */
     fun updateRecipe(recipe: Recipe, newImageBytes: ByteArray?, onResult: (String?) -> Unit) {
         recipe.titleLower = recipe.title.lowercase()
-        recipe.ingredientKeywords = extractIngredientKeywords(recipe.ingredients)
+        recipe.searchKeywords = extractSearchKeywords(recipe.title, recipe.ingredients)
         if (newImageBytes == null) {
             saveRecipe(recipe, onResult)
             return

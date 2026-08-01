@@ -95,7 +95,7 @@ No screen ever downloads a whole database node:
 ```
 users/{uid}:      { uid, name, nameLower, email, photoUrl, bio, recipeCount,
                     favorites: { recipeId: true } }
-recipes/{id}:     { id, title, titleLower, ingredientKeywords: { word: true },
+recipes/{id}:     { id, title, titleLower, searchKeywords: { word: true },
                     ownerUid, ownerName, categories[], ingredients, steps,
                     imageUrl, createdAt, ratings: { uid: stars },
                     ratingSum, ratingCount, ratingAvg }
@@ -118,5 +118,5 @@ Photos live in Storage under `recipe_images/{recipeId}.jpg` and `profile_images/
 
 ## Known limitations
 
-- Search matches by prefix of the recipe/cook name (Realtime Database has no full-text search; a production app would add a search service like Algolia).
+- Search matches whole words (via the keyword index) and name prefixes; partial-word matches like "shak" finding "Shakshuka" mid-word aren't supported (Realtime Database has no full-text search; a production app would add a search service like Algolia).
 - Recipe images are compressed on-device to keep uploads small; very large originals may lose some detail.

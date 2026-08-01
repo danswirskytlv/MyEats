@@ -181,10 +181,10 @@ STOP_WORDS = {
     "taste", "into", "some", "ripe", "whole", "half",
 }
 
-def extract_ingredient_keywords(ingredients):
-    """Same logic as the app: searchable words from the ingredients text."""
+def extract_search_keywords(title, ingredients):
+    """Same logic as the app: searchable words from the title + ingredients."""
     import re as _re
-    words = _re.findall(r"[a-z]+", ingredients.lower())
+    words = _re.findall(r"[a-z]+", (title + " " + ingredients).lower())
     return {w: True for w in words if len(w) >= 3 and w not in STOP_WORDS}
 
 def request(method, url, data=None, headers=None):
@@ -374,7 +374,7 @@ def main():
             "id": rid,
             "title": title,
             "titleLower": title.lower(),
-            "ingredientKeywords": extract_ingredient_keywords(ingredients),
+            "searchKeywords": extract_search_keywords(title, ingredients),
             "ownerUid": uid,
             "ownerName": name,
             "categories": categories,

@@ -11,8 +11,12 @@ data class Recipe(
     var title: String = "",
     /** Lowercased copy of the title — enables indexed server-side prefix search. */
     var titleLower: String = "",
-    /** word -> true, extracted from the ingredients — enables server-side ingredient search. */
-    var ingredientKeywords: Map<String, Boolean> = emptyMap(),
+    /**
+     * word -> true, extracted from the title AND the ingredients — enables
+     * server-side word search ("shakshuka" finds "Classic Shakshuka",
+     * "sugar" finds every recipe that uses sugar).
+     */
+    var searchKeywords: Map<String, Boolean> = emptyMap(),
     var ownerUid: String = "",
     var ownerName: String = "",
     /** A recipe can belong to several categories, e.g. Lunch + Dinner. */
